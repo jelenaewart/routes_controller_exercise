@@ -1,3 +1,29 @@
+<% first_product = Product.first %>
+<% product = Product.where(:name => 'rails book').first %>
+<% cheap_product = Product.where('price > 1').first %>
+
+<p>
+  Product Name: "<%= first_product.name %>" costs $<%= first_product.price %>.
+</p>
+
+<p>
+  The seller for this product is named '<%= first_product.user.name %>'.
+</p>
+
+
+
+<p>
+  Hi, I am <%= product.name %>, my price is <%= product.price %>, and my owner is <%= product.user.name %>.
+</p>
+
+<p>
+  Hi, I am <%= cheap_product.name %>, my price is <%= cheap_product.price %>, and my owner is <%= cheap_product.user.name %>.
+</p>
+
+<p>
+  There are <%= Product.count %> products in the database.
+</p>
+
 <h1>Listing users</h1>
 
 <table>
